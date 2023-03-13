@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+.walletButtonCss {
+  float: right;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.headerCSS {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 50%; */
+  background-image: linear-gradient(
+    to right,
+    rgb(237, 133, 133),
+    rgb(246, 246, 162)
+  );
+}
+.inputCSS {
+  width: 100%;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border: 2px solid #422800 !important;
+  box-shadow: #422800 4px 4px 0 0 !important;
+}
+.inputLabelCSS {
+  color: #010912;
+  font-weight: 600;
+  font-size: 18px;
+  display: block;
+  float: none;
+  width: auto;
+  font-weight: 500;
+  line-height: 20px;
+  padding-top: 0;
+  margin-bottom: 1px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.buttonCSS {
+  background-color: #fbeee0 !important;
+  border: 2px solid #422800 !important;
+  border-radius: 30px !important;
+  box-shadow: #422800 4px 4px 0 0 !important;
+  color: #422800 !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  padding: 0 18px !important;
+  line-height: 50px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  touch-action: manipulation !important;
+}
+
+.buttonCSS:hover {
+  background-color: #fff !important;
+}
+
+.buttonCSS:active {
+  box-shadow: #422800 2px 2px 0 0 !important;
+  transform: translate(2px, 2px) !important;
+}
+
+@media (min-width: 768px) {
+  .buttonCSS {
+    min-width: 120px !important;
+    padding: 0 25px !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.projectOwnerCSS {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 30px;
 }
-
-.App-link {
-  color: #61dafb;
+.projectOwnerButtonsAlignCss {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.inputDivCSS {
+  width: 50%;
 }
