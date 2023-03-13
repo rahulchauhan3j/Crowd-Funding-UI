@@ -1,6 +1,6 @@
 # Crowd Funding Campaign UI
 
-This is a simple UI for Crowd Funding Campaign Smart Contract[https://github.com/rahulchauhan3j/Crowd-Funding-Smart-Contract]
+This is a simple UI for [Crowd Funding Campaign Smart Contract](https://github.com/rahulchauhan3j/Crowd-Funding-Smart-Contract)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
