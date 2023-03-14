@@ -8,6 +8,8 @@ function ViewProposal(props) {
       contractAddress={config.contractAddress}
       contractAbi={config.abi}
       action={async (contract) => {
+        props.resetCampaignData();
+        props.handleCampaignMessage("");
         let call;
         try {
           call =

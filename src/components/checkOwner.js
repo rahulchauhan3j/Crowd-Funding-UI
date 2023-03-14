@@ -8,6 +8,7 @@ function CheckOwner(props) {
       contractAddress={config.contractAddress}
       contractAbi={config.abi}
       action={async (contract) => {
+        props.handleMessage("");
         if (ethers.utils.isAddress(props.address)) {
           const exists =
             await contract.contractWrapper.readContract.isProjectOwner(

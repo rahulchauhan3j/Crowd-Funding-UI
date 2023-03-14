@@ -99,3 +99,9 @@
 .HomeCss {
   margin: 5%;
 }
+.outputMessageCSS {
+  color: rgb(6, 57, 238);
+}
+.campaignDataCSS {
+  color: rgb(1, 17, 12);
+}

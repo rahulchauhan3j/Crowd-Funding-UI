@@ -8,6 +8,8 @@ function TransferFundsToProjectOwnerButton(props) {
       contractAddress={config.contractAddress}
       contractAbi={config.abi}
       action={async (contract) => {
+        props.resetCampaignData();
+        props.handleCampaignMessage("");
         let add;
         try {
           const call =

@@ -41,7 +41,7 @@ function MintTokenFunction() {
             className="inputCSS"
             onChange={updateTokenAmount}
           ></input>
-          <span>{outputERC20}</span>
+          <span className="outputMessageCSS">{outputERC20}</span>
         </div>
         <div className="projectOwnerButtonsAlignCss">
           <CheckBalance

@@ -71,7 +71,7 @@ function SubmitProjectProposal() {
             className="inputCSS"
             onChange={updateEndTime}
           ></input>
-          <span>{outputProjectMessage}</span>
+          <span className="outputMessageCSS">{outputProjectMessage}</span>
         </div>
         <SubmitProjectProposalButton
           projectName={projectName}

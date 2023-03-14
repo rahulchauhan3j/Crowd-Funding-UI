@@ -8,6 +8,7 @@ function AddOwner(props) {
       contractAddress={config.contractAddress}
       contractAbi={config.abi}
       action={async (contract) => {
+        props.handleMessage("");
         if (ethers.utils.isAddress(props.address)) {
           let add;
           try {

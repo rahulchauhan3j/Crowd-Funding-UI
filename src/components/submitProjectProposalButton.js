@@ -9,6 +9,7 @@ function SubmitProjectProposalButton(props) {
       contractAbi={config.abi}
       action={async (contract) => {
         try {
+          props.handleProjectMessage("");
           if (props.endTime <= props.startTime) {
             props.handleProjectMessage(
               "Error - End Time must be greater than Start Time"
@@ -27,20 +28,21 @@ function SubmitProjectProposalButton(props) {
           return proposalTx.events[0].args[0];
         } catch (error) {
           console.log(error);
-          return false;
-        }
-      }}
-      onSuccess={(result) => {
-        if ((result = "error thrown")) {
-          return;
-        }
-        if (result == false) {
           props.handleProjectMessage(
             "Campaign Could Not be Submitted due to an error"
           );
-        } else {
-          props.handleProjectMessage(`Campaign submitted. Id is ${result}`);
+          return "error thrown";
         }
+      }}
+      onSuccess={(result) => {
+        console.log("reached A");
+        if (result == "error thrown") {
+          return;
+        }
+        props.handleProjectMessage(
+          `Campaign submitted. Campaign Id is ${result}.`
+        );
+        console.log("reached B");
       }}
     >
       Submit Proposal

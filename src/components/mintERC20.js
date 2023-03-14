@@ -8,6 +8,7 @@ function MintERC20(props) {
       contractAddress={config.contractAddress}
       contractAbi={config.abi}
       action={async (contract) => {
+        props.handleERC20Message("");
         if (ethers.utils.isAddress(props.userAddress)) {
           let add;
 
@@ -28,7 +29,9 @@ function MintERC20(props) {
       }}
       onSuccess={(result) => {
         if (result == true) {
-          props.handleERC20Message("Tokens Minted");
+          props.handleERC20Message(
+            `${props.amount} tokens minted for account ${props.userAddress}`
+          );
         } else {
           props.handleERC20Message(
             "Tokens Could Not Be Minted due to an error"

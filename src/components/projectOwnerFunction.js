@@ -28,7 +28,7 @@ function ProjectOwnerFunction() {
             className="inputCSS"
             onChange={updateAddress}
           ></input>
-          <span>{output}</span>
+          <span className="outputMessageCSS">{output}</span>
         </div>
         <div className="projectOwnerButtonsAlignCss">
           <CheckOwner

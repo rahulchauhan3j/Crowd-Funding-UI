@@ -8,6 +8,7 @@ function CheckBalance(props) {
       contractAddress={config.contractAddress}
       contractAbi={config.abi}
       action={async (contract) => {
+        props.handleERC20Message("");
         if (ethers.utils.isAddress(props.userAddress)) {
           let call;
           try {
@@ -16,7 +17,7 @@ function CheckBalance(props) {
             );
           } catch (error) {
             console.log(error);
-            return false;
+            return "error found";
           }
           return call;
         } else {
@@ -24,7 +25,8 @@ function CheckBalance(props) {
         }
       }}
       onSuccess={(result) => {
-        if (result != false) {
+        console.log(result);
+        if (result != "error found") {
           props.handleERC20Message(`ERC 20 Token Balance is ${result}`);
         } else {
           props.handleERC20Message(

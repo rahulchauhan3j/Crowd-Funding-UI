@@ -47,11 +47,19 @@ function ManageProposal() {
   }
 
   function updateStartTimeView(message) {
+    if (message == 0) {
+      setStartTimeView(0);
+      return;
+    }
     const startTime = new Date(message.toNumber());
     setStartTimeView(startTime);
   }
 
   function updateEndTimeView(message) {
+    if (message == 0) {
+      setEndTimeView(0);
+      return;
+    }
     const endTime = new Date(message.toNumber());
     setEndTimeView(endTime);
   }
@@ -83,21 +91,26 @@ function ManageProposal() {
             className="inputCSS"
             onChange={updateFundingAmount}
           ></input>
-          <span>{outputCampaignMessage}</span>
-          <br></br>
-          <span>{`Campaign Owner Address : ${projectOwnerAddressView}`}</span>
-          <br></br>
-          <span>{`Campaign Name : ${projectNameView}`}</span>
-          <br></br>
-          <span>{`Funding Goal : ${fundingGoalView}`}</span>
-          <br></br>
-          <span>{`Funds Recieved : ${fundsRecievedView}`}</span>
-          <br></br>
-          <span>{`Campaign Start Time : ${startTimeView}`}</span>
-          <br></br>
-          <span>{`Campaign End Time : ${endTimeView}`}</span>
-          <br></br>
-          <span>{`Campaign Status : ${campaignStatusView}`}</span>
+          <span className="outputMessageCSS">{outputCampaignMessage}</span>
+          {projectOwnerAddressView && (
+            <div className="campaignDataCSS">
+              <br></br>
+              <br></br>
+              <span>{`Campaign Owner Address : ${projectOwnerAddressView}`}</span>
+              <br></br>
+              <span>{`Campaign Name : ${projectNameView}`}</span>
+              <br></br>
+              <span>{`Funding Goal : ${fundingGoalView}`}</span>
+              <br></br>
+              <span>{`Funds Recieved : ${fundsRecievedView}`}</span>
+              <br></br>
+              <span>{`Campaign Start Time : ${startTimeView}`}</span>
+              <br></br>
+              <span>{`Campaign End Time : ${endTimeView}`}</span>
+              <br></br>
+              <span>{`Campaign Status : ${campaignStatusView}`}</span>
+            </div>
+          )}
         </div>
         <div className="projectOwnerButtonsAlignCss">
           <ViewProposal
@@ -175,12 +188,12 @@ function ManageProposal() {
             handleCampaignMessage={(message) => {
               updateOutputCampaignMessage(message);
             }}
-            resetCampaignData={(message) => {
+            resetCampaignData={() => {
               updateProjectOwnerAddressView("");
               updateProjectNameView("");
               updateFundingGoalView("");
-              updateStartTimeView("");
-              updateEndTimeView("");
+              updateStartTimeView(0);
+              updateEndTimeView(0);
               updateFundsRecievedGoalView("");
               updateCampaignStatusView("");
             }}
